@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 12:26:22 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 12:46:14 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 13:27:59 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ int	ft_key_press(int keycode, t_data *data)
 {
 	data->coords.cur_x = data->coords.x / data->img.height;
 	data->coords.cur_y = data->coords.y / data->img.width;
-	if (keycode == RIGHT_ARROW || D_KEY)
+	if (keycode == RIGHT_ARROW || keycode == D_KEY)
 		ft_move(data, 0, 1);
-	if (keycode == LEFT_ARROW || A_KEY)
+	if (keycode == LEFT_ARROW || keycode == A_KEY)
 		ft_move(data, 0, -1);
-	if (keycode == UP_ARROW || W_KEY)
+	if (keycode == UP_ARROW || keycode == W_KEY)
 		ft_move(data, -1, 0);
-	if (keycode == DOWN_ARROW || S_KEY)
+	if (keycode == DOWN_ARROW || keycode == S_KEY)
 		ft_move(data, 1, 0);
-	if (keycode == RIGHT_ARROW || D_KEY || keycode == LEFT_ARROW
+	if (keycode == RIGHT_ARROW || keycode == D_KEY || keycode == LEFT_ARROW
 		|| keycode == A_KEY || keycode == UP_ARROW || keycode == W_KEY
 		|| keycode == DOWN_ARROW || keycode == S_KEY)
 		ft_put_score(data);

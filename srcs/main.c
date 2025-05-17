@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:01:17 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/15 15:27:09 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 16:35:07 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_printf("Error\nInvalid number of arguments!\n");
+		ft_printf("ERROR\nInvalid number of arguments!\n");
 		exit(1);
 	}
 	data.arguments = argv[1];

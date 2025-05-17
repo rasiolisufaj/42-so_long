@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:04:38 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 13:05:02 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 13:24:51 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ typedef struct s_img
 	char			*path_col;
 	char			*path_exit_open;
 	char			*path_exit_closed;
-	int				*width;
-	int				*height;
+	int				width;
+	int				height;
 }					t_img;
 
 /* Struct for coords */

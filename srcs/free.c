@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:21:16 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/16 21:47:07 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 13:21:16 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_free_map_both(t_data *data)
 	int	i;
 
 	i = 0;
-	while (data->map[i] != NULL)
+	while (data->map.map[i] != NULL)
 	{
 		free(data->map.map[i]);
 		free(data->map.map_dup[i]);

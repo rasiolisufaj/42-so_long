@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 19:15:53 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/16 19:59:44 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 16:48:49 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void	ft_check_columns(t_data *data, int n)
 			ft_free_map(data);
 			exit(1);
 		}
+		data->coords.x++;
 	}
 }
 
@@ -121,5 +122,6 @@ void	ft_check_lines(t_data *data, int n)
 			ft_free_map(data);
 			exit(1);
 		}
+		data->coords.y++;
 	}
 }

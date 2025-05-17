@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:00:04 by raisufaj          #+#    #+#             */
-/*   Updated: 2024/11/16 16:21:11 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 17:41:56 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
-		return (0);
+		return (NULL);
 	while (s1[i])
 	{
 		str[i] = s1[i];

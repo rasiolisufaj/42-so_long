@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:56:37 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/16 21:20:46 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 16:51:42 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	ft_flood_fill(t_data *data, int x, int y)
 {
 	if (data->map.map[x][y] == 'E')
 		data->map.exit_status = true;
-	if (data->map.exit_status == ture
+	if (data->map.exit_status == true
 		&& data->count.col == data->count.col_back)
 		return (true);
 	if (ft_player_allowed_move(data, x, y) == true)
@@ -38,7 +38,7 @@ bool	ft_flood_fill(t_data *data, int x, int y)
 			return (false);
 		if (data->map.map[x][y] == 'C' && data->map.map_dup[x][y] != 'Z')
 		{
-			data->count.col++;
+			data->count.col_back++;
 			data->map.map_dup[x][y] = 'Z';
 		}
 		if (data->map.map_dup[x][y] != 'Z')

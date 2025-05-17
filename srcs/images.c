@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 22:08:39 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 12:25:49 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 17:03:38 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	ft_get_images(t_data *data)
 			&data->img.width, &data->img.height);
 	data->img.path_exit_closed = "textures/exit_closed.xpm";
 	data->img.exit_closed = mlx_xpm_file_to_image(data->mlx,
-			data->img.path_exit_closed, &data->img.width, data->img.height);
+			data->img.path_exit_closed, &data->img.width, &data->img.height);
 	data->img.path_exit_open = "textures/exit_open.xpm";
 	data->img.exit_open = mlx_xpm_file_to_image(data->mlx,
-			data->img.path_exit_open, &data->img.width, data->img.height);
+			data->img.path_exit_open, &data->img.width, &data->img.height);
 	ft_check_images(data);
 }
 
