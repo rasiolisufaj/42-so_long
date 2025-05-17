@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 16:35:48 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/15 16:59:19 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/16 19:28:32 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@ void	ft_check_map_name(t_data *data)
 		exit(1);
 	}
 	ft_read_maps(data);
+	ft_check_map_format(data);
+	ft_map_status(data);
+	ft_check_flood_fill(data);
 }
 
+/* Checks if the last 4 chars of the map file name is ".ber" */
 bool	ft_is_map_ber(char *str, char *to_compare)
 {
 	size_t	i;
@@ -40,4 +44,32 @@ bool	ft_is_map_ber(char *str, char *to_compare)
 		j++;
 	}
 	return (true);
+}
+
+/* Checks if map contents are valid */
+void	ft_map_status(t_data *data)
+{
+	data->coords.x = 0;
+	data->count.player = 0;
+	data->count.exit = 0;
+	data->count.col = 0;
+	if (ft_check_map_contents(data) == false)
+	{
+		ft_printf("ERROR\nInvalid map contents!\n");
+		ft_free_map(data);
+		exit(1);
+	}
+}
+
+/* Checks if path is valid */
+void	ft_check_flood_fill(t_data *data)
+{
+	ft_init_map_dup(data);
+	if (ft_flood_fill(data, data->coords.x_player,
+			data->coords.y_player) == false)
+	{
+		ft_printf("ERROR\nInvalid pathing!\n");
+		ft_free_map(data);
+		exit(1);
+	}
 }
