@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 16:46:27 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 17:44:36 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 18:08:12 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ft_read_maps(t_data *data)
 		free(line);
 		line = get_next_line(fd);
 	}
-	free(line);
 	data->map.map = ft_split(tmp, '\n');
 	free(tmp);
 }

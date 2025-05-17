@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 12:26:22 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 13:27:59 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 18:03:45 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_move(t_data *data, int new_x, int new_y)
 			+ new_y] != 'E')
 		{
 			if (data->map.map[data->coords.cur_x + new_x][data->coords.cur_y
-				+ new_y] != 'C')
+				+ new_y] == 'C')
 			{
 				data->count.score++;
 				data->count.col--;
