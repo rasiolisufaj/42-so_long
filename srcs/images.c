@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 22:08:39 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/16 23:58:02 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/17 12:25:49 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_get_images(t_data *data)
 function to destroy and free appropriately */
 void	ft_check_images(t_data *data)
 {
-	t_items items;
+	t_items	items;
 
 	items = 42;
 	if (data->img.player == NULL)
@@ -51,4 +51,67 @@ void	ft_check_images(t_data *data)
 		ft_printf("ERROR\nImage_player does not exist!\n");
 		ft_remove_images(data, img_player);
 	}
+	if (data->img.player_sick == NULL)
+	{
+		ft_printf("ERROR\nImage_player_sick does not exist!\n");
+		ft_remove_images(data, img_player_sick);
+	}
+	if (data->img.wall == NULL)
+	{
+		ft_printf("ERROR\nImage_wall does not exist!\n");
+		ft_remove_images(data, img_wall);
+	}
+	ft_check_images_2(data, items);
+}
+
+/* Continuation to ft_check_images */
+void	ft_check_images_2(t_data *data, t_items items)
+{
+	(void)items;
+	if (data->img.ground == NULL)
+	{
+		ft_printf("ERROR\nImage_ground does not exist!\n");
+		ft_remove_images(data, img_ground);
+	}
+	if (data->img.col == NULL)
+	{
+		ft_printf("ERROR\nImage_col does not exist!\n");
+		ft_remove_images(data, img_col);
+	}
+	if (data->img.exit_open == NULL)
+	{
+		ft_printf("ERROR\nImage_exit_open does not exist!\n");
+		ft_remove_images(data, img_exit_open);
+	}
+	if (data->img.exit_closed == NULL)
+	{
+		ft_printf("ERROR\nImage_exit_closed does not exist!\n");
+		ft_remove_images(data, img_exit_open);
+	}
+}
+
+/* Handles image placement given arguments */
+void	ft_put_image(t_data *data, void *img, int x, int y)
+{
+	mlx_put_image_to_window(data->mlx, data->win, img, data->img.height * y,
+		data->img.width * x);
+}
+
+/* Checks if an image exists, if it does, destroys it in safe mode */
+void	ft_check_and_destroy(t_data *data, t_items items)
+{
+	if (items != img_player && data->img.player)
+		mlx_destroy_image(data->mlx, data->img.player);
+	if (items != img_player_sick && data->img.player_sick)
+		mlx_destroy_image(data->mlx, data->img.player_sick);
+	if (items != img_wall && data->img.wall)
+		mlx_destroy_image(data->mlx, data->img.wall);
+	if (items != img_ground && data->img.ground)
+		mlx_destroy_image(data->mlx, data->img.ground);
+	if (items != img_col && data->img.col)
+		mlx_destroy_image(data->mlx, data->img.col);
+	if (items != img_exit_open && data->img.exit_open)
+		mlx_destroy_image(data->mlx, data->img.exit_open);
+	if (items != img_exit_closed && data->img.exit_closed)
+		mlx_destroy_image(data->mlx, data->img.exit_closed);
 }
