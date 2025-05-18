@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 12:46:34 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 13:04:29 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/18 16:00:09 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	ft_check_col(t_data *data)
 	{
 		mlx_set_font(data->mlx, data->win, "10x20");
 		mlx_string_put(data->mlx, data->win, 22, data->map.map_x * 80 - 52,
-			0x800000, "JACK IS HUNGRY...");
+			0x800000, "DINO IS HUNGRY...");
 		mlx_string_put(data->mlx, data->win, 102, data->map.map_x * 80 - 32,
 			0x800000, "F E E D");
 		mlx_string_put(data->mlx, data->win, 132, data->map.map_x * 80 - 12,
 			0x800000, "H I M !");
 		mlx_string_put(data->mlx, data->win, 22, data->map.map_x * 80 - 52,
-			0xFE817, "JACK IS NOW HAPPY...");
+			0xFE817, "DINO IS NOW HAPPY...");
 		mlx_string_put(data->mlx, data->win, 52, data->map.map_x * 80 - 32,
 			0xFFA500, "TAKE HIM TO");
 		mlx_string_put(data->mlx, data->win, 82, data->map.map_x * 80 - 12,
