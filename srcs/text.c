@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 12:46:34 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/18 16:00:09 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/18 16:16:17 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ void	ft_put_score(t_data *data)
 	final_text = ft_strjoin("CHOCOLATES = ", move_or_score);
 	mlx_string_put(data->mlx, data->win, 82, 60, 0x5FFB17, final_text);
 	mlx_string_put(data->mlx, data->win, 40, 20, 0xFFFFFF, "S O    L O N G");
+	mlx_string_put(data->mlx, data->win, 22, data->map.map_x * 80 - 52,
+		0xDAEE01, "DINO IS HUNGRY...");
+	free(move_or_score);
+	free(final_text);
+	ft_check_col(data);
 }
 
 /* If no more collectibles are present on the map, rewrites a string
@@ -40,12 +45,8 @@ void	ft_check_col(t_data *data)
 		mlx_set_font(data->mlx, data->win, "10x20");
 		mlx_string_put(data->mlx, data->win, 22, data->map.map_x * 80 - 52,
 			0x800000, "DINO IS HUNGRY...");
-		mlx_string_put(data->mlx, data->win, 102, data->map.map_x * 80 - 32,
-			0x800000, "F E E D");
-		mlx_string_put(data->mlx, data->win, 132, data->map.map_x * 80 - 12,
-			0x800000, "H I M !");
 		mlx_string_put(data->mlx, data->win, 22, data->map.map_x * 80 - 52,
-			0xFE817, "DINO IS NOW HAPPY...");
+			0xFE817, "DINO IS NOW SICK...");
 		mlx_string_put(data->mlx, data->win, 52, data->map.map_x * 80 - 32,
 			0xFFA500, "TAKE HIM TO");
 		mlx_string_put(data->mlx, data->win, 82, data->map.map_x * 80 - 12,
