@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 12:26:22 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 18:03:45 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/18 12:39:51 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_move(t_data *data, int new_x, int new_y)
 {
 	data->coords.new_x = new_x;
 	data->coords.new_y = new_y;
-	if (data->map.map[data->coords.cur_x + new_x][data->coords.cur_x
+	if (data->map.map[data->coords.cur_x + new_x][data->coords.cur_y
 		+ new_y] != '1')
 	{
 		if (data->map.map[data->coords.cur_x + new_x][data->coords.cur_y
