@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:21:16 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 13:21:16 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/18 16:43:02 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,24 @@ void	ft_free_map(t_data *data)
 	int	i;
 
 	i = 0;
-	while (data->map.map[i] != NULL)
+	if (data->map.map)
 	{
-		free(data->map.map[i]);
-		i++;
+		while (data->map.map[i] != NULL)
+		{
+			free(data->map.map[i]);
+			i++;
+		}
+		free(data->map.map);
+		data->map.map = NULL;
 	}
-	free(data->map.map);
+	i = 0;
+	if (data->map.map_dup)
+	{
+		while (data->map.map_dup[i])
+			free(data->map.map_dup[i++]);
+		free(data->map.map_dup);
+		data->map.map_dup = NULL;
+	}
 }
 
 /* Destroy all images */
