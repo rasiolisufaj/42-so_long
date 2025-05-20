@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 20:56:37 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 16:51:42 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/20 11:36:19 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_init_map_dup(t_data *data)
 	unsigned int	x;
 	unsigned int	y;
 
-	data->map.map_dup = malloc(sizeof(char *) * (data->map.map_x));
+	data->map.map_dup = malloc(sizeof(char *) * (data->map.map_x + 1));
 	if (!data->map.map_dup)
 		exit(1);
 	x = 0;
@@ -89,6 +89,7 @@ void	ft_init_map_dup(t_data *data)
 		data->map.map_dup[x][y] = '\0';
 		x++;
 	}
+	data->map.map_dup[x] = NULL;
 	data->map.exit_status = false;
 	data->count.col_back = 0;
 }
