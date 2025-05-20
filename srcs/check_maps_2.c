@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 16:35:48 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/16 19:28:32 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/20 15:57:25 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_check_flood_fill(t_data *data)
 			data->coords.y_player) == false)
 	{
 		ft_printf("ERROR\nInvalid pathing!\n");
-		ft_free_map(data);
+		ft_free_map_both(data);
 		exit(1);
 	}
 }

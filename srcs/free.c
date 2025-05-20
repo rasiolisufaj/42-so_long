@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:21:16 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/20 11:06:24 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/20 16:01:36 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ in case of images errors. */
 void	ft_remove_images(t_data *data, t_items items)
 {
 	ft_check_and_destroy(data, items);
-	ft_free_map(data);
+	ft_free_map_both(data);
 	mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
