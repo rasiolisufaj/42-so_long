@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:21:16 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/18 16:43:02 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/20 11:06:24 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,6 @@ void	ft_free_map_both(t_data *data)
 	int	i;
 
 	i = 0;
-	while (data->map.map[i] != NULL)
-	{
-		free(data->map.map[i]);
-		free(data->map.map_dup[i]);
-		i++;
-	}
-	free(data->map.map_dup);
-	free(data->map.map);
-}
-
-/* Frees map.map line by line */
-void	ft_free_map(t_data *data)
-{
-	int	i;
-
-	i = 0;
 	if (data->map.map)
 	{
 		while (data->map.map[i] != NULL)
@@ -69,13 +53,31 @@ void	ft_free_map(t_data *data)
 		data->map.map = NULL;
 	}
 	i = 0;
-	if (data->map.map_dup)
+	if (data->map.map_dup && data->map.map != data->map.map_dup)
 	{
-		while (data->map.map_dup[i])
-			free(data->map.map_dup[i++]);
+		while (data->map.map_dup[i] != NULL)
+		{
+			free(data->map.map_dup[i]);
+			i++;
+		}
 		free(data->map.map_dup);
 		data->map.map_dup = NULL;
 	}
+}
+
+/* Frees map.map line by line */
+void	ft_free_map(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (data->map.map[i] != NULL)
+	{
+		free(data->map.map[i]);
+		i++;
+	}
+	free(data->map.map);
+	data->map.map = NULL;
 }
 
 /* Destroy all images */
