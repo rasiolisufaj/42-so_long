@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:04:38 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/17 13:24:51 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:56:08 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ void				ft_check_mlx_win(t_data *data);
 void				ft_map_status(t_data *data);
 void				ft_check_map_name(t_data *data);
 void				ft_check_flood_fill(t_data *data);
+void				ft_check_newline_integrity(char *map_str);
 bool				ft_is_map_ber(char *str, char *to_compare);
 
 /* CHECK_MAPS.C */

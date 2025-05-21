@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 16:35:48 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/20 15:57:25 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:56:02 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,22 @@ void	ft_check_flood_fill(t_data *data)
 		ft_printf("ERROR\nInvalid pathing!\n");
 		ft_free_map_both(data);
 		exit(1);
+	}
+}
+
+void	ft_check_newline_integrity(char *map_str)
+{
+	int i;
+
+	i = 0;
+	while (map_str[i] && map_str[i + 1])
+	{
+		if (map_str[i] == '\n' && map_str[i + 1] == '\n')
+		{
+			ft_printf("ERROR\nMap contains an empty line!\n");
+			free(map_str);
+			exit(1);
+		}
+		i++;
 	}
 }
