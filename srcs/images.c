@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 22:08:39 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/18 16:45:00 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:10:19 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_check_images_2(t_data *data, t_items items)
 	if (data->img.exit_closed == NULL)
 	{
 		ft_printf("ERROR\nImage_exit_closed does not exist!\n");
-		ft_remove_images(data, img_exit_open);
+		ft_remove_images(data, img_exit_closed);
 	}
 }
 
