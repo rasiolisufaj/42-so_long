@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 12:46:34 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/18 16:16:17 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/24 17:50:49 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,16 @@ void	ft_check_col(t_data *data)
 			0xFFA500, "TAKE HIM TO");
 		mlx_string_put(data->mlx, data->win, 82, data->map.map_x * 80 - 12,
 			0xFFA500, "THE HOSPITAL!");
+	}
+}
+
+void	ft_check_empty_map(char *tmp, int fd)
+{
+	if (tmp[0] == '\0')
+	{
+		ft_printf("ERROR\nMap is empty!\n");
+		free(tmp);
+		close(fd);
+		exit(1);
 	}
 }

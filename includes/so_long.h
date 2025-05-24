@@ -6,7 +6,7 @@
 /*   By: raisufaj <raisufaj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:04:38 by raisufaj          #+#    #+#             */
-/*   Updated: 2025/05/21 11:56:08 by raisufaj         ###   ########.fr       */
+/*   Updated: 2025/05/24 17:50:53 by raisufaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,5 +171,6 @@ void				ft_move(t_data *data, int new_x, int new_y);
 /* TEXT.C */
 void				ft_put_score(t_data *data);
 void				ft_check_col(t_data *data);
+void				ft_check_empty_map(char *tmp, int fd);
 
 #endif
