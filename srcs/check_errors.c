@@ -18,7 +18,7 @@ void	ft_check_mlx(t_data *data)
 	if (!data->mlx)
 	{
 		ft_printf("ERROR\nMLX is not initiated!\n");
-		ft_remove_normal(data);
+		ft_free_map_both(data);
 		exit(1);
 	}
 }
@@ -29,7 +29,9 @@ void	ft_check_mlx_win(t_data *data)
 	if (!data->win)
 	{
 		ft_printf("ERROR\nThe window is not initiated!\n");
-		ft_remove_normal(data);
+		ft_free_map_both(data);
+		mlx_destroy_display(data->mlx);
+		free(data->mlx);
 		exit(1);
 	}
 }

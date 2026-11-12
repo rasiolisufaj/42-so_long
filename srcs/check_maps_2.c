@@ -34,6 +34,8 @@ bool	ft_is_map_ber(char *str, char *to_compare)
 	size_t	i;
 	size_t	j;
 
+	if (ft_strlen(str) < 4)
+		return (false);
 	i = ft_strlen(str) - 4;
 	j = 0;
 	while (str[i] || to_compare[j])
@@ -79,9 +81,9 @@ void	ft_check_newline_integrity(char *map_str)
 	int	i;
 
 	i = 0;
-	while (map_str[i] && map_str[i + 1])
+	while (map_str[i])
 	{
-		if (map_str[i] == '\n' && map_str[i + 1] == '\n')
+		if (map_str[i] == '\n' && (i == 0 || map_str[i + 1] == '\n'))
 		{
 			ft_printf("ERROR\nMap contains an empty line!\n");
 			free(map_str);

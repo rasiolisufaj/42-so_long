@@ -33,7 +33,7 @@ void	ft_remove_normal(t_data *data)
 	mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);
-	exit(1);
+	exit(0);
 }
 
 /* Frees both maps line by line */

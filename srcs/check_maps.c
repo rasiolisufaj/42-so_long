@@ -116,8 +116,8 @@ void	ft_check_lines(t_data *data, int n)
 		if (data->map.map[n][data->coords.y] != '1')
 		{
 			ft_printf("ERROR\n");
-			ft_printf("Open map on line n%d and column n%d!\n", data->coords.y,
-				n);
+			ft_printf("Open map on line n%d and column n%d!\n", n,
+				data->coords.y);
 			ft_printf("The chocolates will escape...\n");
 			ft_free_map(data);
 			exit(1);
